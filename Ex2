@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+setlocale(LC_ALL, "");
+
+    const int MAX_SIZE = 100; // Tamanho máximo da frase, pode conter variação
+    char frase[MAX_SIZE]; // declara o array Frase
+   
+    // Solicita ao usuário que insira a frase
+    cout << "Digite uma frase: ";
+    cin.getline(frase, MAX_SIZE); /* cin função padrão em c++
+    getline função em C++ para pegar toda linha
+    frase, paga a frase e armazena na função frase
+    Max_size maximo de caracteres para o Getline não pegar caracteres a mais
+    */
+   
+    // Encontra o comprimento da frase
+    int tamanho = 0; // declara a variavel tamanho
+    while (frase[tamanho] != '\0') { // tamanho "anda" por cara parte da frase
+// em busca de um caractere Nulo '\0'
+        tamanho++; // tamanho++ para adicionar mais um a variavel tamanho e então percorrer
+    }
+   
+    // Imprime a frase ao contrário
+    cout << "Frase ao contrário: ";
+    for (int i = tamanho - 1; i >= 0; i--) { /* variavel For do maior ao menor
+para imprimir a frase ao contario */
+        cout << frase[i];
+    }
+   
+    return 0;
+}
