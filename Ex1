@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main (){
+
+setlocale(LC_ALL, "");
+
+int decimal, resto;
+string hexadecimal;
+
+cout << "Digite um numero decimal: " << endl;
+cin >> decimal;
+
+while (decimal != 0){
+resto = decimal % 16;
+char caractere;
+if (resto < 10)
+caractere = resto + '0';
+else
+caractere = resto + 'A' - 10;
+hexadecimal = caractere + hexadecimal;
+decimal /= 16;
+}
+
+cout << "O número em haxadecimal é: " << hexadecimal << endl;
+
+return 0;
+
+}
