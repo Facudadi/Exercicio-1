@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main () {
+    setlocale(LC_ALL, "");
+
+    int num;
+
+    cout << "Qual o tamanho da fila? " << endl;
+    cin >> num;
+
+    int pilha_A[num];
+    int pilha_B[num];
+
+    for (int i = 0; i < num; i++) {
+        cout << "Digite o valor " << i+1 << " da fila: " << endl;
+        cin >> pilha_A[i];
+    }
+
+    cout << "Valores da fila original: " << endl;
+    for (int i = 0; i < num; i++) {
+        cout << "Na posição " << i+1 << " da fila, está o valor: " << pilha_A[i] << endl;
+    }
+
+    for (int i = 0, j = num - 1; i < num; i++, j--) {
+        pilha_B[j] = pilha_A[i];
+    }
+
+    cout << "A fila invertida ficou: " << endl;
+    for (int i = 0; i < num; i++) {
+        cout << "Na posição " << i+1 << " da fila, está o valor: " << pilha_B[i] << endl;
+    }
+
+    return 0;
+}
